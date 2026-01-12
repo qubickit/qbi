@@ -8,7 +8,9 @@
   "entries": [],
   "meta": {
     "source": "contracts/MyLastMatch.h",
+    "sourceRepo": "https://github.com/qubic/core",
+    "sourceRevision": "6f020e221dcb3772b026d976e52f3d66bce2d2a0",
     "generator": "qbi (header-extractor)",
-    "generatorVersion": "0.0.0-development"
+    "generatorVersion": "1.0.0"
   }
 }
