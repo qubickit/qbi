@@ -10,13 +10,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  precheck:
+    runs-on: ubuntu-latest
+    outputs:
+      has_npm_token: ${{ steps.check.outputs.has_npm_token }}
+    steps:
+      - id: check
+        name: Check NPM token
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -n "$NPM_TOKEN" ]; then
+            echo "has_npm_token=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_npm_token=false" >> "$GITHUB_OUTPUT"
+          fi
+
   release:
     runs-on: ubuntu-latest
+    needs: [precheck]
+    if: ${{ needs.precheck.outputs.has_npm_token == 'true' }}
     permissions:
       contents: write
       issues: write
       pull-requests: write
-    if: ${{ secrets.NPM_TOKEN != '' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,4 +63,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: bun run release
-
