@@ -1,0 +1,37 @@
+{
+  "name": "@qubic-labs/qbi",
+  "version": "0.0.0-development",
+  "module": "./dist/index.js",
+  "bin": {
+    "qbi": "./bin/qbi.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "bun test",
+    "typecheck": "bunx tsc -p tsconfig.json",
+    "compile-registry": "bun run src/cli.ts compile-registry",
+    "validate": "bun run src/cli.ts validate",
+    "prepack": "bun run build"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "bin/",
+    "dist/",
+    "README.md"
+  ]
+}

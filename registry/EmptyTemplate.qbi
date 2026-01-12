@@ -1,0 +1,12 @@
+{
+  "qbiVersion": "0.1",
+  "contract": {
+    "name": "EmptyTemplate"
+  },
+  "entries": [],
+  "meta": {
+    "source": "contracts/EmptyTemplate.h",
+    "generator": "qbi (header-extractor)",
+    "generatorVersion": "0.0.0-development"
+  }
+}

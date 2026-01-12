@@ -1,0 +1,47 @@
+{
+  "qbiVersion": "0.1",
+  "contract": {
+    "name": "Random",
+    "contractIndex": 3,
+    "contractPublicKeyHex": "0300000000000000000000000000000000000000000000000000000000000000"
+  },
+  "entries": [
+    {
+      "kind": "procedure",
+      "name": "RevealAndCommit",
+      "inputType": 1,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "revealedBits",
+            "typeRef": {
+              "type": "array",
+              "length": 64,
+              "item": {
+                "type": "u64"
+              }
+            }
+          },
+          {
+            "name": "committedDigest",
+            "typeRef": {
+              "type": "m256i"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "inputSize": 544,
+      "outputSize": 1
+    }
+  ],
+  "meta": {
+    "source": "contracts/Random.h",
+    "generator": "qbi (header-extractor)",
+    "generatorVersion": "0.0.0-development"
+  }
+}

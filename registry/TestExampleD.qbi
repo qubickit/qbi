@@ -1,0 +1,14 @@
+{
+  "qbiVersion": "0.1",
+  "contract": {
+    "name": "TestExampleD",
+    "contractIndex": 19,
+    "contractPublicKeyHex": "1300000000000000000000000000000000000000000000000000000000000000"
+  },
+  "entries": [],
+  "meta": {
+    "source": "contracts/TestExampleD.h",
+    "generator": "qbi (header-extractor)",
+    "generatorVersion": "0.0.0-development"
+  }
+}

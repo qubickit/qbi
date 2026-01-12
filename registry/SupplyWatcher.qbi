@@ -1,0 +1,14 @@
+{
+  "qbiVersion": "0.1",
+  "contract": {
+    "name": "SupplyWatcher",
+    "contractIndex": 7,
+    "contractPublicKeyHex": "0700000000000000000000000000000000000000000000000000000000000000"
+  },
+  "entries": [],
+  "meta": {
+    "source": "contracts/SupplyWatcher.h",
+    "generator": "qbi (header-extractor)",
+    "generatorVersion": "0.0.0-development"
+  }
+}

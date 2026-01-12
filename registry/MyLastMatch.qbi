@@ -1,0 +1,14 @@
+{
+  "qbiVersion": "0.1",
+  "contract": {
+    "name": "MyLastMatch",
+    "contractIndex": 5,
+    "contractPublicKeyHex": "0500000000000000000000000000000000000000000000000000000000000000"
+  },
+  "entries": [],
+  "meta": {
+    "source": "contracts/MyLastMatch.h",
+    "generator": "qbi (header-extractor)",
+    "generatorVersion": "0.0.0-development"
+  }
+}
