@@ -11,11 +11,20 @@
     "typecheck": "bunx tsc -p tsconfig.json",
     "compile-registry": "bun run src/cli.ts compile-registry",
     "validate": "bun run src/cli.ts validate",
+    "release": "bunx semantic-release",
     "prepack": "bun run build"
   },
   "type": "module",
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.6",
+    "@semantic-release/npm": "^12.0.2",
+    "@semantic-release/release-notes-generator": "^14.0.3",
     "@types/bun": "latest",
+    "conventional-changelog-conventionalcommits": "^9.1.0",
+    "semantic-release": "^24.2.9",
     "typescript": "^5"
   },
   "publishConfig": {
@@ -32,6 +41,7 @@
   "files": [
     "bin/",
     "dist/",
+    "CHANGELOG.md",
     "README.md"
   ]
 }
