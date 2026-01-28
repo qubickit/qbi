@@ -1,0 +1,558 @@
+{
+  "qbiVersion": "0.1",
+  "contract": {
+    "name": "QThirtyFour"
+  },
+  "entries": [
+    {
+      "kind": "procedure",
+      "name": "BuyTicket",
+      "inputType": 1,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "randomValues",
+            "typeRef": {
+              "type": "array",
+              "length": 4,
+              "item": {
+                "type": "u8"
+              }
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 4,
+      "outputSize": 1
+    },
+    {
+      "kind": "function",
+      "name": "GetTicketPrice",
+      "inputType": 1,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "ticketPrice",
+            "typeRef": {
+              "type": "u64"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 8
+    },
+    {
+      "kind": "function",
+      "name": "GetNextEpochData",
+      "inputType": 2,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "nextEpochData",
+            "typeRef": {
+              "type": "struct",
+              "fields": [
+                {
+                  "name": "newTicketPrice",
+                  "typeRef": {
+                    "type": "bytes",
+                    "length": 0
+                  }
+                },
+                {
+                  "name": "newTargetJackpot",
+                  "typeRef": {
+                    "type": "u64"
+                  }
+                },
+                {
+                  "name": "newSchedule",
+                  "typeRef": {
+                    "type": "u8"
+                  }
+                },
+                {
+                  "name": "newDrawHour",
+                  "typeRef": {
+                    "type": "u8"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 16
+    },
+    {
+      "kind": "procedure",
+      "name": "SetPrice",
+      "inputType": 2,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "newPrice",
+            "typeRef": {
+              "type": "u64"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 8,
+      "outputSize": 1
+    },
+    {
+      "kind": "function",
+      "name": "GetWinnerData",
+      "inputType": 3,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "winnerData",
+            "typeRef": {
+              "type": "struct",
+              "fields": [
+                {
+                  "name": "winners",
+                  "typeRef": {
+                    "type": "array",
+                    "length": 1024,
+                    "item": {
+                      "type": "struct",
+                      "fields": [
+                        {
+                          "name": "player",
+                          "typeRef": {
+                            "type": "m256i"
+                          }
+                        },
+                        {
+                          "name": "randomValues",
+                          "typeRef": {
+                            "type": "array",
+                            "length": 4,
+                            "item": {
+                              "type": "u8"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "winnerValues",
+                  "typeRef": {
+                    "type": "array",
+                    "length": 4,
+                    "item": {
+                      "type": "u8"
+                    }
+                  }
+                },
+                {
+                  "name": "winnerCounter",
+                  "typeRef": {
+                    "type": "u64"
+                  }
+                },
+                {
+                  "name": "epoch",
+                  "typeRef": {
+                    "type": "u16"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 40984
+    },
+    {
+      "kind": "procedure",
+      "name": "SetSchedule",
+      "inputType": 3,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "newSchedule",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 1
+    },
+    {
+      "kind": "function",
+      "name": "GetPools",
+      "inputType": 4,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "pools",
+            "typeRef": {
+              "type": "struct",
+              "fields": [
+                {
+                  "name": "jackpot",
+                  "typeRef": {
+                    "type": "u64"
+                  }
+                },
+                {
+                  "name": "reserve",
+                  "typeRef": {
+                    "type": "u64"
+                  }
+                },
+                {
+                  "name": "targetJackpot",
+                  "typeRef": {
+                    "type": "u64"
+                  }
+                },
+                {
+                  "name": "frActive",
+                  "typeRef": {
+                    "type": "u8"
+                  }
+                },
+                {
+                  "name": "roundsSinceK4",
+                  "typeRef": {
+                    "type": "u16"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 32
+    },
+    {
+      "kind": "procedure",
+      "name": "SetTargetJackpot",
+      "inputType": 4,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "newTargetJackpot",
+            "typeRef": {
+              "type": "u64"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 8,
+      "outputSize": 1
+    },
+    {
+      "kind": "function",
+      "name": "GetSchedule",
+      "inputType": 5,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "schedule",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 1
+    },
+    {
+      "kind": "procedure",
+      "name": "SetDrawHour",
+      "inputType": 5,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "newDrawHour",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 1
+    },
+    {
+      "kind": "function",
+      "name": "GetDrawHour",
+      "inputType": 6,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "drawHour",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 1
+    },
+    {
+      "kind": "function",
+      "name": "GetState",
+      "inputType": 7,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "currentState",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 1
+    },
+    {
+      "kind": "function",
+      "name": "GetFees",
+      "inputType": 8,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "teamFeePercent",
+            "typeRef": {
+              "type": "u8"
+            }
+          },
+          {
+            "name": "distributionFeePercent",
+            "typeRef": {
+              "type": "u8"
+            }
+          },
+          {
+            "name": "winnerFeePercent",
+            "typeRef": {
+              "type": "u8"
+            }
+          },
+          {
+            "name": "burnPercent",
+            "typeRef": {
+              "type": "u8"
+            }
+          },
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 5
+    },
+    {
+      "kind": "function",
+      "name": "EstimatePrizePayouts",
+      "inputType": 9,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "k2WinnerCount",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "k3WinnerCount",
+            "typeRef": {
+              "type": "u64"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "k2PayoutPerWinner",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "k3PayoutPerWinner",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "k2MinFloor",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "k3MinFloor",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "perWinnerCap",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "totalRevenue",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "k2Pool",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "k3Pool",
+            "typeRef": {
+              "type": "u64"
+            }
+          }
+        ]
+      },
+      "inputSize": 16,
+      "outputSize": 64
+    }
+  ],
+  "meta": {
+    "source": "contracts/QThirtyFour.h",
+    "sourceRepo": "https://github.com/qubic/core",
+    "sourceRevision": "4ee886a3279295de086a12568fac2b23d7716869",
+    "generator": "qbi (header-extractor)",
+    "generatorVersion": "1.0.0",
+    "warnings": [
+      "Unrecognized field statement: newTargetJackpot = 0",
+      "Unrecognized field statement: newSchedule = 0",
+      "Unrecognized field statement: newDrawHour = 0",
+      "Unknown type: } \t\t}  \t\tuint64 (treated as bytes[0])"
+    ]
+  }
+}

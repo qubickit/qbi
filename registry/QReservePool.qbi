@@ -1,0 +1,156 @@
+{
+  "qbiVersion": "0.1",
+  "contract": {
+    "name": "QReservePool"
+  },
+  "entries": [
+    {
+      "kind": "function",
+      "name": "GetAvailableReserve",
+      "inputType": 1,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "availableReserve",
+            "typeRef": {
+              "type": "u64"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 8
+    },
+    {
+      "kind": "procedure",
+      "name": "WithdrawReserve",
+      "inputType": 1,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "revenue",
+            "typeRef": {
+              "type": "u64"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "allocatedRevenue",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 8,
+      "outputSize": 16
+    },
+    {
+      "kind": "procedure",
+      "name": "AddAllowedSC",
+      "inputType": 2,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "scIndex",
+            "typeRef": {
+              "type": "u64"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 8,
+      "outputSize": 1
+    },
+    {
+      "kind": "function",
+      "name": "GetAllowedSC",
+      "inputType": 2,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "allowedSC",
+            "typeRef": {
+              "type": "array",
+              "length": 128,
+              "item": {
+                "type": "m256i"
+              }
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 4096
+    },
+    {
+      "kind": "procedure",
+      "name": "RemoveAllowedSC",
+      "inputType": 3,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "scIndex",
+            "typeRef": {
+              "type": "u64"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 8,
+      "outputSize": 1
+    }
+  ],
+  "meta": {
+    "source": "contracts/QReservePool.h",
+    "sourceRepo": "https://github.com/qubic/core",
+    "sourceRevision": "4ee886a3279295de086a12568fac2b23d7716869",
+    "generator": "qbi (header-extractor)",
+    "generatorVersion": "1.0.0"
+  }
+}

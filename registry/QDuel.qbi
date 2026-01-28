@@ -1,0 +1,647 @@
+{
+  "qbiVersion": "0.1",
+  "contract": {
+    "name": "QDuel"
+  },
+  "entries": [
+    {
+      "kind": "procedure",
+      "name": "CreateRoom",
+      "inputType": 1,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "allowedPlayer",
+            "typeRef": {
+              "type": "m256i"
+            }
+          },
+          {
+            "name": "stake",
+            "typeRef": {
+              "type": "i64"
+            }
+          },
+          {
+            "name": "raiseStep",
+            "typeRef": {
+              "type": "i64"
+            }
+          },
+          {
+            "name": "maxStake",
+            "typeRef": {
+              "type": "i64"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 56,
+      "outputSize": 1
+    },
+    {
+      "kind": "function",
+      "name": "GetPercentFees",
+      "inputType": 1,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "devFeePercentBps",
+            "typeRef": {
+              "type": "u8"
+            }
+          },
+          {
+            "name": "burnFeePercentBps",
+            "typeRef": {
+              "type": "u8"
+            }
+          },
+          {
+            "name": "shareholdersFeePercentBps",
+            "typeRef": {
+              "type": "u8"
+            }
+          },
+          {
+            "name": "percentScale",
+            "typeRef": {
+              "type": "u16"
+            }
+          },
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u64"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 16
+    },
+    {
+      "kind": "procedure",
+      "name": "ConnectToRoom",
+      "inputType": 2,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "roomId",
+            "typeRef": {
+              "type": "m256i"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 32,
+      "outputSize": 1
+    },
+    {
+      "kind": "function",
+      "name": "GetRooms",
+      "inputType": 2,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "rooms",
+            "typeRef": {
+              "type": "array",
+              "length": 512,
+              "item": {
+                "type": "struct",
+                "fields": [
+                  {
+                    "name": "roomId",
+                    "typeRef": {
+                      "type": "m256i"
+                    }
+                  },
+                  {
+                    "name": "owner",
+                    "typeRef": {
+                      "type": "m256i"
+                    }
+                  },
+                  {
+                    "name": "allowedPlayer",
+                    "typeRef": {
+                      "type": "m256i"
+                    }
+                  },
+                  {
+                    "name": "amount",
+                    "typeRef": {
+                      "type": "i64"
+                    }
+                  },
+                  {
+                    "name": "closeTimer",
+                    "typeRef": {
+                      "type": "u64"
+                    }
+                  },
+                  {
+                    "name": "lastUpdate",
+                    "typeRef": {
+                      "type": "struct",
+                      "fields": [
+                        {
+                          "name": "true",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "false",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "true",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "true",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "true",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "daysPer400years",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "daysProcessed",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "daysInYear",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "daysInYear",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "monthDays",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "days",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "monthDays",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "monthDays",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "days",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "monthDays",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "true",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "dt",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "days",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "totalMicrosec",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "ret",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "value",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "sum",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "true",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "lowToHighFactor",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "lowToHighFactor",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        },
+                        {
+                          "name": "true",
+                          "typeRef": {
+                            "type": "bytes",
+                            "length": 0
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 61448
+    },
+    {
+      "kind": "function",
+      "name": "GetTTLHours",
+      "inputType": 3,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "ttlHours",
+            "typeRef": {
+              "type": "u8"
+            }
+          },
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 2
+    },
+    {
+      "kind": "procedure",
+      "name": "SetPercentFees",
+      "inputType": 3,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "devFeePercentBps",
+            "typeRef": {
+              "type": "u8"
+            }
+          },
+          {
+            "name": "burnFeePercentBps",
+            "typeRef": {
+              "type": "u8"
+            }
+          },
+          {
+            "name": "shareholdersFeePercentBps",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 3,
+      "outputSize": 1
+    },
+    {
+      "kind": "function",
+      "name": "GetUserProfile",
+      "inputType": 4,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "roomId",
+            "typeRef": {
+              "type": "m256i"
+            }
+          },
+          {
+            "name": "depositedAmount",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "locked",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "stake",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "raiseStep",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "maxStake",
+            "typeRef": {
+              "type": "u64"
+            }
+          },
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 80
+    },
+    {
+      "kind": "procedure",
+      "name": "SetTTLHours",
+      "inputType": 4,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "ttlHours",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 1
+    },
+    {
+      "kind": "procedure",
+      "name": "Deposit",
+      "inputType": 5,
+      "input": {
+        "type": "nodata",
+        "expectedSize": 1
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 1,
+      "outputSize": 1
+    },
+    {
+      "kind": "procedure",
+      "name": "Withdraw",
+      "inputType": 6,
+      "input": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "amount",
+            "typeRef": {
+              "type": "i64"
+            }
+          }
+        ]
+      },
+      "output": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "returnCode",
+            "typeRef": {
+              "type": "u8"
+            }
+          }
+        ]
+      },
+      "inputSize": 8,
+      "outputSize": 1
+    }
+  ],
+  "meta": {
+    "source": "contracts/QDuel.h",
+    "sourceRepo": "https://github.com/qubic/core",
+    "sourceRevision": "4ee886a3279295de086a12568fac2b23d7716869",
+    "generator": "qbi (header-extractor)",
+    "generatorVersion": "1.0.0",
+    "warnings": [
+      "Unrecognized field statement: return *this",
+      "Unknown type: return (treated as bytes[0])",
+      "Unknown type: else \t\t\t\t\treturn (treated as bytes[0])",
+      "Unknown type: } \t\t\treturn (treated as bytes[0])",
+      "Could not resolve array length token: month",
+      "Unknown type: return (treated as bytes[0])",
+      "Unrecognized field statement: sint64 millisecCarry = 0, secCarry = 0, minuteCarry = 0, hourCarry = 0, dayCarry = 0",
+      "Unknown type: }  \t\t\treturn (treated as bytes[0])",
+      "Unrecognized field statement: constexpr sint64 daysPer400years = 97ll * 366ll + 303ll * 365ll",
+      "Unknown type: sint64 daysProcessed = factor400years * (treated as bytes[0])",
+      "Unrecognized field statement: newYear += factor400years * 400",
+      "Unknown type: days -= (treated as bytes[0])",
+      "Unrecognized field statement: ++newYear",
+      "Unknown type: days -= (treated as bytes[0])",
+      "Unrecognized field statement: --newYear",
+      "Unknown type: days -= (treated as bytes[0])",
+      "Unknown type: days -= (treated as bytes[0])",
+      "Unknown type: } \t\t\t\telse \t\t\t\t{ \t\t\t\t\t \t\t\t\t\tnewDay += (treated as bytes[0])",
+      "Unrecognized field statement: days = 0",
+      "Unknown type: newDay -= (treated as bytes[0])",
+      "Unrecognized field statement: ++newYear",
+      "Unknown type: newDay -= (treated as bytes[0])",
+      "Unrecognized field statement: newMonth += 1",
+      "Unrecognized field statement: days = 0",
+      "Unrecognized field statement: } \t\t\t\telse \t\t\t\t{ \t\t\t\t\t \t\t\t\t\t--newMonth",
+      "Unrecognized field statement: newMonth = 12",
+      "Unknown type: } \t\t\t\t\telse \t\t\t\t\t{ \t\t\t\t\t\t \t\t\t\t\t\tnewDay += monthDays + (treated as bytes[0])",
+      "Unrecognized field statement: days = 0",
+      "Unrecognized field statement: --newMonth",
+      "Unrecognized field statement: ++newMonth",
+      "Unknown type: newDay -= (treated as bytes[0])",
+      "Unrecognized field statement: newMonth += 1",
+      "Unknown type: return (treated as bytes[0])",
+      "Unrecognized field statement: DateAndTime begin = *this",
+      "Unknown type: DateAndTime end = (treated as bytes[0])",
+      "Unrecognized field statement: end = *this",
+      "Unrecognized field statement: i < 10 && begin.value != end.value",
+      "Unrecognized field statement: sint64 days = yearDiff * 365 + monthDiff * 28",
+      "Unknown type: totalDays += (treated as bytes[0])",
+      "Unknown type: return (treated as bytes[0])",
+      "Unknown type: return (treated as bytes[0])",
+      "Unknown type: }  \tprotected: \t\t \t\t \t\t \t\t \t\t \t\t \t\t \t\t \t\t \t\t \t\tuint64 (treated as bytes[0])",
+      "Unknown type: valInAndOut = (treated as bytes[0])",
+      "Unknown type: return (treated as bytes[0])",
+      "Unknown type: low %= (treated as bytes[0])",
+      "Unknown type: low = low - highCarryOut * (treated as bytes[0])",
+      "Unknown type: } \t\t\treturn (treated as bytes[0])"
+    ]
+  }
+}

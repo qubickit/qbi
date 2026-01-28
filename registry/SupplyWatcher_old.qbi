@@ -1,11 +1,11 @@
 {
   "qbiVersion": "0.1",
   "contract": {
-    "name": "EmptyTemplate"
+    "name": "SupplyWatcher_old"
   },
   "entries": [],
   "meta": {
-    "source": "contracts/EmptyTemplate.h",
+    "source": "contracts/SupplyWatcher_old.h",
     "sourceRepo": "https://github.com/qubic/core",
     "sourceRevision": "4ee886a3279295de086a12568fac2b23d7716869",
     "generator": "qbi (header-extractor)",
