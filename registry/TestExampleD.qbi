@@ -2,14 +2,14 @@
   "qbiVersion": "0.1",
   "contract": {
     "name": "TestExampleD",
-    "contractIndex": 20,
-    "contractPublicKeyHex": "1400000000000000000000000000000000000000000000000000000000000000"
+    "contractIndex": 23,
+    "contractPublicKeyHex": "1700000000000000000000000000000000000000000000000000000000000000"
   },
   "entries": [],
   "meta": {
     "source": "contracts/TestExampleD.h",
     "sourceRepo": "https://github.com/qubic/core",
-    "sourceRevision": "d470a75b6e7dbe8b8aea07637d9756d9ac9c4b1d",
+    "sourceRevision": "d9154b7d98d667496c6d8dc77d47bc24777b236e",
     "generator": "qbi (header-extractor)",
     "generatorVersion": "1.0.0"
   }
