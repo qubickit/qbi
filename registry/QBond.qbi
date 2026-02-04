@@ -821,7 +821,7 @@
   "meta": {
     "source": "contracts/QBond.h",
     "sourceRepo": "https://github.com/qubic/core",
-    "sourceRevision": "d9154b7d98d667496c6d8dc77d47bc24777b236e",
+    "sourceRevision": "677088746c8cd06ef74ee4eb161719c33208d565",
     "generator": "qbi (header-extractor)",
     "generatorVersion": "1.0.0"
   }
